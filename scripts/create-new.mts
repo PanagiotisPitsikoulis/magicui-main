@@ -37,6 +37,14 @@ const docsDir = path.join(
 const registryUiFile = path.join("registry", "registry-ui.ts");
 const registryExamplesFile = path.join("registry", "registry-examples.ts");
 
+// Correct path for the example.tsx file (should go directly to magicui folder)
+const exampleFilePath = path.join(
+  "registry",
+  "default",
+  "magicui",
+  "example.tsx"
+);
+
 // Create component files and folders
 if (!fs.existsSync(componentDir)) {
   fs.mkdirSync(componentDir, { recursive: true });
@@ -114,6 +122,22 @@ published: true
 | ----- | ------ | -------------------------- | ------- |
 | color | String | The color of the component | "blue"  |
 `
+  );
+}
+
+// Ensure example.tsx is placed in the correct directory
+if (!fs.existsSync(exampleFilePath)) {
+  fs.writeFileSync(
+    exampleFilePath,
+    `import ${componentNameCapitalized} from '@/registry/default/magicui/${componentNameLower}';
+
+export default function ${componentNameCapitalized}Example() {
+  return (
+    <div className="relative justify-center">
+      <${componentNameCapitalized} />
+    </div>
+  );
+}`
   );
 }
 
