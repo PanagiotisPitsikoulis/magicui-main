@@ -1,0 +1,12 @@
+{
+  "name": "prototype",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "magicui/prototype.tsx",
+      "content": "import React from \"react\";\n\nfunction Prototype() {\n  return <div>Prototype</div>;\n}\n\nexport default Prototype;\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}
