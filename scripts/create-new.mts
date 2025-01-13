@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { execSync } from "child_process";
 
 // Ensure the script is executed with an argument
 console.log(process.argv);
@@ -51,9 +52,7 @@ if (!fs.existsSync(componentDir)) {
 }
 
 if (!fs.existsSync(path.join(componentDir, `${componentNameLower}.tsx`))) {
-  fs.writeFileSync(
-    path.join(componentDir, `${componentNameLower}.tsx`),
-    `import React from 'react';
+  const componentContent = `import React from 'react';
 
 export default function ${componentNameCapitalized}() {
   return (
@@ -61,14 +60,16 @@ export default function ${componentNameCapitalized}() {
       This is your ${componentNameCapitalized} component.
     </div>
   );
-}`
+}`;
+  fs.writeFileSync(
+    path.join(componentDir, `${componentNameLower}.tsx`),
+    componentContent
   );
+  runPrettier(path.join(componentDir, `${componentNameLower}.tsx`)); // Prettier formatting
 }
 
 if (!fs.existsSync(demoDir)) {
-  fs.writeFileSync(
-    demoDir,
-    `import ${componentNameCapitalized} from '@/registry/default/magicui/${componentNameLower}';
+  const demoContent = `import ${componentNameCapitalized} from '@/registry/default/magicui/${componentNameLower}';
 
 export default function ${componentNameCapitalized}Demo() {
   return (
@@ -76,14 +77,13 @@ export default function ${componentNameCapitalized}Demo() {
       <${componentNameCapitalized} />
     </div>
   );
-}`
-  );
+}`;
+  fs.writeFileSync(demoDir, demoContent);
+  runPrettier(demoDir); // Prettier formatting
 }
 
 if (!fs.existsSync(docsDir)) {
-  fs.writeFileSync(
-    docsDir,
-    `---
+  const docsContent = `---
 title: ${componentNameCapitalized}
 date: 2024-06-01
 description: ${componentNameCapitalized} component for Magic UI
@@ -121,15 +121,14 @@ published: true
 | Prop  | Type   | Description                | Default |
 | ----- | ------ | -------------------------- | ------- |
 | color | String | The color of the component | "blue"  |
-`
-  );
+`;
+  fs.writeFileSync(docsDir, docsContent);
+  runPrettier(docsDir); // Prettier formatting
 }
 
 // Ensure example.tsx is placed in the correct directory
 if (!fs.existsSync(exampleFilePath)) {
-  fs.writeFileSync(
-    exampleFilePath,
-    `import ${componentNameCapitalized} from '@/registry/default/magicui/${componentNameLower}';
+  const exampleContent = `import ${componentNameCapitalized} from '@/registry/default/magicui/${componentNameLower}';
 
 export default function ${componentNameCapitalized}Example() {
   return (
@@ -137,8 +136,9 @@ export default function ${componentNameCapitalized}Example() {
       <${componentNameCapitalized} />
     </div>
   );
-}`
-  );
+}`;
+  fs.writeFileSync(exampleFilePath, exampleContent);
+  runPrettier(exampleFilePath); // Prettier formatting
 }
 
 // Update registry files only if the component is not already in them
@@ -176,3 +176,13 @@ if (!registryExamplesContent.includes(`${componentNameLower}-demo`)) {
 }
 
 console.log(`✅ ${componentNameCapitalized} component created successfully!`);
+
+// Prettier formatting function
+function runPrettier(filePath: string) {
+  try {
+    execSync(`npx prettier --write ${filePath}`, { stdio: "ignore" });
+    console.log(`✅ Prettier formatted: ${filePath}`);
+  } catch (error) {
+    console.error(`❌ Failed to format ${filePath} with Prettier`);
+  }
+}
