@@ -1,0 +1,15 @@
+{
+  "name": "container",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "magicui/container.tsx",
+      "content": "import Container from \"@/registry/default/magicui/container\";\n\nexport default function ContainerExample() {\n  return (\n    <div className=\"relative justify-center\">\n      <Container />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

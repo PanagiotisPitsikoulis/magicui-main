@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "magicui/prototype.tsx",
-      "content": "import React from \"react\";\n\nfunction Prototype() {\n  return <div>Prototype</div>;\n}\n\nexport default Prototype;\n",
+      "content": "import Prototype from \"@/registry/default/magicui/prototype\";\n\nexport default function PrototypeExample() {\n  return (\n    <div className=\"relative justify-center\">\n      <Prototype />\n    </div>\n  );\n}\n",
       "type": "registry:ui",
       "target": ""
     }

@@ -1,0 +1,15 @@
+{
+  "name": "banner",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "magicui/banner.tsx",
+      "content": "import Banner from \"@/registry/default/magicui/banner\";\n\nexport default function BannerExample() {\n  return (\n    <div className=\"relative justify-center\">\n      <Banner />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "section",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "magicui/section.tsx",
+      "content": "import Section from \"@/registry/default/magicui/section\";\n\nexport default function SectionExample() {\n  return (\n    <div className=\"relative justify-center\">\n      <Section />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "navbar",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "magicui/navbar.tsx",
+      "content": "import Navbar from \"@/registry/default/magicui/navbar\";\n\nexport default function NavbarExample() {\n  return (\n    <div className=\"relative justify-center\">\n      <Navbar />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

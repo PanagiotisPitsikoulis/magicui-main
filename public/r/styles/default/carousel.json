@@ -1,0 +1,15 @@
+{
+  "name": "carousel",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "magicui/carousel.tsx",
+      "content": "import Carousel from \"@/registry/default/magicui/carousel\";\n\nexport default function CarouselExample() {\n  return (\n    <div className=\"relative justify-center\">\n      <Carousel />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

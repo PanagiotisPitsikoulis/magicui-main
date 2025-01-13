@@ -2,18 +2,6 @@ import { Registry } from "@/registry/schema";
 
 export const examples: Registry = [
   {
-    name: "prototype-demo",
-    type: "registry:example",
-    registryDependencies: ["prototype"],
-    files: ["/example/prototype-demo.tsx"],
-  },
-  {
-    name: "magic-card-demo",
-    type: "registry:example",
-    registryDependencies: ["magic-card"],
-    files: ["example/magic-card-demo.tsx"],
-  },
-  {
     name: "android-demo",
     type: "registry:example",
     registryDependencies: ["android"],
@@ -513,16 +501,6 @@ export const examples: Registry = [
     files: ["example/cool-mode-custom.tsx"],
   },
   {
-    name: "pulsating-button-demo",
-    type: "registry:example",
-    files: ["example/pulsating-button-demo.tsx"],
-  },
-  {
-    name: "ripple-button-demo",
-    type: "registry:example",
-    files: ["example/ripple-button-demo.tsx"],
-  },
-  {
     name: "file-tree-demo",
     type: "registry:example",
     files: ["example/file-tree-demo.tsx"],
@@ -576,5 +554,89 @@ export const examples: Registry = [
     name: "interactive-hover-button-demo",
     type: "registry:example",
     files: ["example/interactive-hover-button-demo.tsx"],
+  },
+  {
+    name: "typography-demo",
+    type: "registry:example",
+    registryDependencies: ["typography"],
+    files: ["example/typography-demo.tsx"],
+  },
+  {
+    name: "hero-demo",
+    type: "registry:example",
+    registryDependencies: ["hero"],
+    files: ["example/hero-demo.tsx"],
+  },
+  {
+    name: "section-demo",
+    type: "registry:example",
+    registryDependencies: ["section"],
+    files: ["example/section-demo.tsx"],
+  },
+  {
+    name: "cta-demo",
+    type: "registry:example",
+    registryDependencies: ["cta"],
+    files: ["example/cta-demo.tsx"],
+  },
+  {
+    name: "testimonials-demo",
+    type: "registry:example",
+    registryDependencies: ["testimonials"],
+    files: ["example/testimonials-demo.tsx"],
+  },
+  {
+    name: "carousel-demo",
+    type: "registry:example",
+    registryDependencies: ["carousel"],
+    files: ["example/carousel-demo.tsx"],
+  },
+  {
+    name: "banner-demo",
+    type: "registry:example",
+    registryDependencies: ["banner"],
+    files: ["example/banner-demo.tsx"],
+  },
+  {
+    name: "container-demo",
+    type: "registry:example",
+    registryDependencies: ["container"],
+    files: ["example/container-demo.tsx"],
+  },
+  {
+    name: "footer-demo",
+    type: "registry:example",
+    registryDependencies: ["footer"],
+    files: ["example/footer-demo.tsx"],
+  },
+  {
+    name: "navbar-demo",
+    type: "registry:example",
+    registryDependencies: ["navbar"],
+    files: ["example/navbar-demo.tsx"],
+  },
+  {
+    name: "features-demo",
+    type: "registry:example",
+    registryDependencies: ["features"],
+    files: ["example/features-demo.tsx"],
+  },
+  {
+    name: "background-demo",
+    type: "registry:example",
+    registryDependencies: ["background"],
+    files: ["example/background-demo.tsx"],
+  },
+  {
+    name: "animate-demo",
+    type: "registry:example",
+    registryDependencies: ["animate"],
+    files: ["example/animate-demo.tsx"],
+  },
+  {
+    name: "textbox-demo",
+    type: "registry:example",
+    registryDependencies: ["textbox"],
+    files: ["example/textbox-demo.tsx"],
   },
 ];

@@ -1,0 +1,15 @@
+{
+  "name": "footer",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "magicui/footer.tsx",
+      "content": "import Footer from \"@/registry/default/magicui/footer\";\n\nexport default function FooterExample() {\n  return (\n    <div className=\"relative justify-center\">\n      <Footer />\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

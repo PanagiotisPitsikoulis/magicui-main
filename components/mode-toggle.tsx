@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Button } from "@nextui-org/react";
+import { MoonIcon, SunIcon } from "lucide-react";
 
 export const ModeToggle = React.forwardRef<
   HTMLButtonElement,
@@ -16,16 +16,17 @@ export const ModeToggle = React.forwardRef<
   return (
     <Button
       ref={ref}
-      variant="ghost"
-      type="button"
-      size="icon"
+      variant='ghost'
+      size='sm'
+      type='button'
+      isIconOnly
       className={cn("px-2", className)}
-      aria-label="Toggle theme"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      aria-label='Toggle theme'
+      onPress={() => setTheme(theme === "dark" ? "light" : "dark")}
       {...props}
     >
-      <SunIcon className="size-[1.2rem] text-neutral-800 dark:hidden dark:text-neutral-200" />
-      <MoonIcon className="hidden size-[1.2rem] text-neutral-800 dark:block dark:text-neutral-200" />
+      <SunIcon className='size-[1.2rem] text-neutral-800 dark:hidden dark:text-neutral-200' />
+      <MoonIcon className='hidden size-[1.2rem] text-neutral-800 dark:block dark:text-neutral-200' />
     </Button>
   );
 });

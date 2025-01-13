@@ -2,17 +2,6 @@ import { Registry } from "@/registry/schema";
 
 export const ui: Registry = [
   {
-    name: "prototype",
-    type: "registry:ui",
-    files: ["magicui/prototype.tsx"],
-  },
-  {
-    name: "magic-card",
-    type: "registry:ui",
-    dependencies: ["motion"],
-    files: ["magicui/magic-card.tsx"],
-  },
-  {
     name: "android",
     type: "registry:ui",
     files: ["magicui/android.tsx"],
@@ -538,55 +527,6 @@ export const ui: Registry = [
     files: ["magicui/cool-mode.tsx"],
   },
   {
-    name: "pulsating-button",
-    type: "registry:ui",
-    files: ["magicui/pulsating-button.tsx"],
-    tailwind: {
-      config: {
-        theme: {
-          extend: {
-            animation: {
-              pulse: "pulse var(--duration) ease-out infinite",
-            },
-            keyframes: {
-              pulse: {
-                "0%, 100%": { boxShadow: "0 0 0 0 var(--pulse-color)" },
-                "50%": { boxShadow: "0 0 0 8px var(--pulse-color)" },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-  {
-    name: "ripple-button",
-    type: "registry:ui",
-    files: ["magicui/ripple-button.tsx"],
-    tailwind: {
-      config: {
-        theme: {
-          extend: {
-            animation: {
-              rippling: "rippling var(--duration) ease-out",
-            },
-            keyframes: {
-              rippling: {
-                "0%": {
-                  opacity: "1",
-                },
-                "100%": {
-                  transform: "scale(2)",
-                  opacity: "0",
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-  {
     name: "file-tree",
     type: "registry:ui",
     files: ["magicui/file-tree.tsx"],
@@ -657,5 +597,71 @@ export const ui: Registry = [
     type: "registry:ui",
     dependencies: ["lucide-react"],
     files: ["magicui/interactive-hover-button.tsx"],
+  },
+  {
+    name: "typography",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/typography.tsx"],
+  },
+  {
+    name: "section",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/section.tsx"],
+  },
+  {
+    name: "cta",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/cta.tsx"],
+  },
+  {
+    name: "testimonials",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/testimonials.tsx"],
+  },
+  {
+    name: "carousel",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/carousel.tsx"],
+  },
+  {
+    name: "banner",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/banner.tsx"],
+  },
+  {
+    name: "container",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/container.tsx"],
+  },
+  {
+    name: "footer",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/footer.tsx"],
+  },
+  {
+    name: "navbar",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/navbar.tsx"],
+  },
+  {
+    name: "features",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/features.tsx"],
+  },
+  {
+    name: "textbox",
+    type: "registry:ui",
+    dependencies: ["lucide-react"],
+    files: ["magicui/textbox.tsx"],
   },
 ];

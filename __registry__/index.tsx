@@ -5,28 +5,6 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {
   "default": {
-    "prototype": {
-      name: "prototype",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/magicui/prototype.tsx"],
-      component: React.lazy(() => import("@/registry/default/magicui/prototype.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "magic-card": {
-      name: "magic-card",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/magicui/magic-card.tsx"],
-      component: React.lazy(() => import("@/registry/default/magicui/magic-card.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "android": {
       name: "android",
       type: "registry:ui",
@@ -577,28 +555,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "pulsating-button": {
-      name: "pulsating-button",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/magicui/pulsating-button.tsx"],
-      component: React.lazy(() => import("@/registry/default/magicui/pulsating-button.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "ripple-button": {
-      name: "ripple-button",
-      type: "registry:ui",
-      registryDependencies: undefined,
-      files: ["registry/default/magicui/ripple-button.tsx"],
-      component: React.lazy(() => import("@/registry/default/magicui/ripple-button.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "file-tree": {
       name: "file-tree",
       type: "registry:ui",
@@ -665,23 +621,122 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "prototype-demo": {
-      name: "prototype-demo",
-      type: "registry:example",
-      registryDependencies: ["prototype"],
-      files: ["registry/default//example/prototype-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default//example/prototype-demo.tsx")),
+    "typography": {
+      name: "typography",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/typography.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/typography.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
       chunks: []
     },
-    "magic-card-demo": {
-      name: "magic-card-demo",
-      type: "registry:example",
-      registryDependencies: ["magic-card"],
-      files: ["registry/default/example/magic-card-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/magic-card-demo.tsx")),
+    "section": {
+      name: "section",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/section.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/section.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "cta": {
+      name: "cta",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/cta.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/cta.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "testimonials": {
+      name: "testimonials",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/testimonials.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/testimonials.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "carousel": {
+      name: "carousel",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/carousel.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/carousel.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "banner": {
+      name: "banner",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/banner.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/banner.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "container": {
+      name: "container",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/container.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/container.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "footer": {
+      name: "footer",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/footer.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/footer.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "navbar": {
+      name: "navbar",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/navbar.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/navbar.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "features": {
+      name: "features",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/features.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/features.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "textbox": {
+      name: "textbox",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: ["registry/default/magicui/textbox.tsx"],
+      component: React.lazy(() => import("@/registry/default/magicui/textbox.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
@@ -1633,28 +1688,6 @@ export const Index: Record<string, any> = {
       subcategory: "undefined",
       chunks: []
     },
-    "pulsating-button-demo": {
-      name: "pulsating-button-demo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/example/pulsating-button-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/pulsating-button-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
-    "ripple-button-demo": {
-      name: "ripple-button-demo",
-      type: "registry:example",
-      registryDependencies: undefined,
-      files: ["registry/default/example/ripple-button-demo.tsx"],
-      component: React.lazy(() => import("@/registry/default/example/ripple-button-demo.tsx")),
-      source: "",
-      category: "undefined",
-      subcategory: "undefined",
-      chunks: []
-    },
     "file-tree-demo": {
       name: "file-tree-demo",
       type: "registry:example",
@@ -1771,6 +1804,160 @@ export const Index: Record<string, any> = {
       registryDependencies: undefined,
       files: ["registry/default/example/interactive-hover-button-demo.tsx"],
       component: React.lazy(() => import("@/registry/default/example/interactive-hover-button-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "typography-demo": {
+      name: "typography-demo",
+      type: "registry:example",
+      registryDependencies: ["typography"],
+      files: ["registry/default/example/typography-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/typography-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "hero-demo": {
+      name: "hero-demo",
+      type: "registry:example",
+      registryDependencies: ["hero"],
+      files: ["registry/default/example/hero-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/hero-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "section-demo": {
+      name: "section-demo",
+      type: "registry:example",
+      registryDependencies: ["section"],
+      files: ["registry/default/example/section-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/section-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "cta-demo": {
+      name: "cta-demo",
+      type: "registry:example",
+      registryDependencies: ["cta"],
+      files: ["registry/default/example/cta-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/cta-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "testimonials-demo": {
+      name: "testimonials-demo",
+      type: "registry:example",
+      registryDependencies: ["testimonials"],
+      files: ["registry/default/example/testimonials-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/testimonials-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "carousel-demo": {
+      name: "carousel-demo",
+      type: "registry:example",
+      registryDependencies: ["carousel"],
+      files: ["registry/default/example/carousel-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/carousel-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "banner-demo": {
+      name: "banner-demo",
+      type: "registry:example",
+      registryDependencies: ["banner"],
+      files: ["registry/default/example/banner-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/banner-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "container-demo": {
+      name: "container-demo",
+      type: "registry:example",
+      registryDependencies: ["container"],
+      files: ["registry/default/example/container-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/container-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "footer-demo": {
+      name: "footer-demo",
+      type: "registry:example",
+      registryDependencies: ["footer"],
+      files: ["registry/default/example/footer-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/footer-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "navbar-demo": {
+      name: "navbar-demo",
+      type: "registry:example",
+      registryDependencies: ["navbar"],
+      files: ["registry/default/example/navbar-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/navbar-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "features-demo": {
+      name: "features-demo",
+      type: "registry:example",
+      registryDependencies: ["features"],
+      files: ["registry/default/example/features-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/features-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "background-demo": {
+      name: "background-demo",
+      type: "registry:example",
+      registryDependencies: ["background"],
+      files: ["registry/default/example/background-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/background-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "animate-demo": {
+      name: "animate-demo",
+      type: "registry:example",
+      registryDependencies: ["animate"],
+      files: ["registry/default/example/animate-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/animate-demo.tsx")),
+      source: "",
+      category: "undefined",
+      subcategory: "undefined",
+      chunks: []
+    },
+    "textbox-demo": {
+      name: "textbox-demo",
+      type: "registry:example",
+      registryDependencies: ["textbox"],
+      files: ["registry/default/example/textbox-demo.tsx"],
+      component: React.lazy(() => import("@/registry/default/example/textbox-demo.tsx")),
       source: "",
       category: "undefined",
       subcategory: "undefined",
