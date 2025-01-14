@@ -11,6 +11,10 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       href: "/components",
     },
+    {
+      title: "Examples",
+      href: "/examples",
+    },
   ],
   sidebarNav: [
     {
@@ -50,6 +54,10 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
+      title: "Sections",
+      items: [],
+    },
+    {
       title: "Components",
       items: [
         {
@@ -72,62 +80,11 @@ export const docsConfig: DocsConfig = {
           href: `/docs/components/background`,
           items: [],
         },
-        {
-          title: "Banner",
-          href: `/docs/components/banner`,
-          items: [],
-        },
-        {
-          title: "Carousel",
-          href: `/docs/components/carousel`,
-          items: [],
-        },
-        {
-          title: "Container",
-          href: `/docs/components/container`,
-          items: [],
-        },
-        {
-          title: "CTA",
-          href: `/docs/components/cta`,
-          items: [],
-        },
-        {
-          title: "Features",
-          href: `/docs/components/features`,
-          items: [],
-        },
-        {
-          title: "Footer",
-          href: `/docs/components/footer`,
-          items: [],
-        },
-        {
-          title: "Grid",
-          href: `/docs/components/grid`,
-          items: [],
-        },
-        {
-          title: "Hero",
-          href: `/docs/components/hero`,
-          items: [],
-        },
-        {
-          title: "Navbar",
-          href: `/docs/components/navbar`,
-          items: [],
-        },
-        {
-          title: "Section",
-          href: `/docs/components/section`,
-          items: [],
-        },
-        {
-          title: "Testimonials",
-          href: `/docs/components/testimonials`,
-          items: [],
-        },
       ],
+    },
+    {
+      title: "Composed",
+      items: [],
     },
   ],
 };

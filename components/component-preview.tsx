@@ -30,7 +30,7 @@ export function ComponentPreview({
   const [config] = useConfig();
   const index = styles.findIndex((style) => style.name === config.style);
 
-  const Codes = React.Children.toArray(children) as React.ReactElement[];
+  const Codes = React.Children.toArray(children) as React.ReactElement<any>[];
   const Code = Codes[index];
 
   const Preview = React.useMemo(() => {

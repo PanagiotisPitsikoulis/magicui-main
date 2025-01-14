@@ -1,8 +1,10 @@
+"use client";
+import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import React from "react";
+import { useTheme } from "next-themes";
 
 /** Content that can be either a URL string or a React element */
-type LayerContent = string | React.ReactElement;
+type LayerContent = string | React.ReactElement<any>;
 
 /** Configuration for responsive backgrounds at different breakpoints */
 type ResponsiveBackground = {
@@ -18,6 +20,8 @@ type ResponsiveBackground = {
   xl?: LayerContent;
   /** 2XL devices (1536px and up) */
   "2xl"?: LayerContent;
+  /** Optional dark mode background */
+  dark?: LayerContent;
 };
 
 /** Props for the BackgroundContainer component */
@@ -87,6 +91,14 @@ export default function Background({
   className,
   classNames = {},
 }: BackgroundProps) {
+  const { theme } = useTheme(); // Get the current theme (light/dark)
+  const [resolvedTheme, setResolvedTheme] = useState(theme);
+
+  // Wait for the theme to be resolved (in case of SSR mismatch)
+  useEffect(() => {
+    setResolvedTheme(theme);
+  }, [theme]);
+
   if (!background) return <div className={className}>{children}</div>;
 
   /**
@@ -111,7 +123,11 @@ export default function Background({
     bg: LayerContent | ResponsiveBackground,
   ): LayerContent => {
     if (isResponsiveBackground(bg)) {
-      return bg.default; // For now, just return default. Responsive handling via CSS/JS
+      // Use dark mode background if theme is dark
+      if (resolvedTheme === "dark" && bg.dark) {
+        return bg.dark; // Use dark mode background if available
+      }
+      return bg.default; // Use default background for light mode
     }
     return bg;
   };

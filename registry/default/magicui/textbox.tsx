@@ -1,51 +1,7 @@
 import React from "react";
-import { cva, VariantProps } from "class-variance-authority";
+import { VariantProps } from "class-variance-authority";
+import Typography from "@/registry/default/magicui/typography";
 import { cn } from "@/lib/utils";
-
-const landingTextStyles = cva("flex flex-col gap-6", {
-  variants: {
-    orientation: {
-      left: "items-start text-left",
-      center: "items-center text-center",
-      right: "items-end text-left",
-    },
-    size: {
-      sm: "",
-      md: "",
-      lg: "",
-    },
-  },
-  defaultVariants: {
-    orientation: "center",
-    size: "md",
-  },
-});
-
-const titleStyles = cva("font-extrabold text-foreground capitalize", {
-  variants: {
-    size: {
-      sm: "text-3xl sm:text-4xl md:text-5xl w-full sm:w-3/4 md:w-2/3",
-      md: "text-4xl sm:text-5xl md:text-6xl w-full sm:w-2/3 md:w-1/2",
-      lg: "text-6xl sm:text-7xl md:text-8xl w-full sm:w-1/2 md:w-1/3",
-    },
-  },
-  defaultVariants: {
-    size: "md",
-  },
-});
-
-const subtitleStyles = cva("font-normal text-foreground-700", {
-  variants: {
-    size: {
-      sm: "text-base sm:text-lg md:text-xl w-full sm:w-3/4 md:w-2/3",
-      md: "text-lg sm:text-xl md:text-2xl w-full sm:w-2/3 md:w-1/2",
-      lg: "text-xl sm:text-2xl md:text-3xl w-full sm:w-1/2 md:w-1/3",
-    },
-  },
-  defaultVariants: {
-    size: "md",
-  },
-});
 
 export type TextBoxProps = {
   title?: React.ReactNode;
@@ -60,7 +16,7 @@ export type TextBoxProps = {
     topContent?: string;
     bottomContent?: string;
   };
-} & VariantProps<typeof landingTextStyles>;
+} & VariantProps<typeof Typography>;
 
 /**
  * LandingText component for the main section of a page with announcements,
@@ -71,29 +27,33 @@ const TextBox: React.FC<TextBoxProps> = ({
   subtitle,
   topContent,
   bottomContent,
-  orientation,
-  size,
   className,
   classNames = {},
 }) => {
   return (
-    <div
-      className={cn(
-        landingTextStyles({ orientation, size }),
-        className,
-        classNames.container,
-      )}
-    >
+    <div className={cn("flex flex-col gap-6", className, classNames.container)}>
       {topContent && (
         <div className={cn("mb-4", classNames.topContent)}>{topContent}</div>
       )}
       {title && (
-        <h1 className={cn(titleStyles({ size }), classNames.title)}>{title}</h1>
+        <Typography
+          as="h1"
+          variant="hero"
+          size="6xl"
+          className={cn("text-foreground", classNames.title)}
+        >
+          {title}
+        </Typography>
       )}
       {subtitle && (
-        <h3 className={cn(subtitleStyles({ size }), classNames.subtitle)}>
+        <Typography
+          as="h3"
+          variant="subtitle"
+          size="xl"
+          className={cn("text-foreground-700", classNames.subtitle)}
+        >
           {subtitle}
-        </h3>
+        </Typography>
       )}
       {bottomContent && (
         <div className={cn("mt-4", classNames.bottomContent)}>

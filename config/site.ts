@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Magic UI",
+  name: "LandCN",
   url: "https://magicui.design",
   ogImage: "https://magicui.design/og",
   description:

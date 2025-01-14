@@ -1,0 +1,15 @@
+{
+  "name": "iframe",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "magicui/iframe.tsx",
+      "content": "export default function Iframe() {\n  return <div className=\"relative justify-center\">Iframe</div>;\n}\n",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}

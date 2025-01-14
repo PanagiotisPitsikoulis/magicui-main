@@ -146,12 +146,11 @@ if (!fs.existsSync(docsDir)) {
 runPrettier(docsDir); // Prettier formatting
 
 // Ensure magicui.tsx is placed in the correct directory
-const magicuiContent = `import ${componentNameCapitalized} from '@/registry/default/magicui/${componentNameLower}';
-
-export default function ${componentNameCapitalized}Example() {
+const magicuiContent = `
+export default function ${componentNameCapitalized}() {
   return (
     <div className="relative justify-center">
-      <${componentNameCapitalized} />
+      ${componentNameCapitalized}
     </div>
   );
 }`;

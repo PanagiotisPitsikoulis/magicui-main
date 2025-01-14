@@ -5,6 +5,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+import type { JSX } from "react";
+
 type TechComponentType = {
   name: string;
   icon: JSX.Element;

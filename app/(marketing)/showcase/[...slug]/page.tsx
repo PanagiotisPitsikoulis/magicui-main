@@ -8,9 +8,9 @@ import { siteConfig } from "@/config/site";
 import { absoluteUrl } from "@/lib/utils";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
 export async function generateStaticParams(): Promise<PageProps["params"][]> {
@@ -30,9 +30,8 @@ async function getPageFromParams(params: PageProps["params"]) {
   return page;
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
   const page = await getPageFromParams(params);
 
   if (!page) {
@@ -72,7 +71,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function PagePage({ params }: PageProps) {
+export default async function PagePage(props: PageProps) {
+  const params = await props.params;
   const page = await getPageFromParams(params);
 
   if (!page) {

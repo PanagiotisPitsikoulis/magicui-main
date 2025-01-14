@@ -1,11 +1,9 @@
+"use client";
 import { NavItem, NavItemWithChildren } from "@/types";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { Doc } from "content-collections";
 import Link from "next/link";
-
-import { buttonVariants } from "@/components/ui/button";
 import { docsConfig } from "@/config/docs";
-import { cn } from "@/lib/utils";
 import { Button } from "@nextui-org/react";
 
 interface DocsPagerProps {

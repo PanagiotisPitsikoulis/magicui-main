@@ -1,7 +1,7 @@
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import AnimatedWrapper from "../magicui/animate";
 
-export default function App() {
+export default function AnimateDemo() {
   const list = [
     {
       title: "Orange",

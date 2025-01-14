@@ -1,27 +1,29 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import React, { useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
+import { createRoot, Root } from "react-dom/client";
 
 interface IframeProps {
-  children: React.ReactNode; // Content to render inside the iframe
-  className?: string; // Additional className for iframe customization
-  style?: React.CSSProperties; // Inline styles for the iframe
-  width?: string | number; // Width of the iframe
-  height?: string | number; // Height of the iframe
+  children: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  width?: string | number;
+  height?: string | number;
 }
 
 const Iframe: React.FC<IframeProps> = ({
   children,
   className,
   style,
-  width = "100%", // Default to full width
-  height = "540px", // Default to 540px height
+  width = "100%",
+  height = "540px",
 }) => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null); // Store the container reference
-  const { theme } = useTheme(); // Access the current theme using next-themes
+  const containerRef = useRef<HTMLDivElement | null>(null); // Reference to container div
+  const rootRef = useRef<Root | null>(null); // Reference to the React root
+  const { theme } = useTheme();
 
   useEffect(() => {
     const iframe = iframeRef.current;
@@ -30,18 +32,27 @@ const Iframe: React.FC<IframeProps> = ({
     const doc = iframe.contentDocument;
     if (!doc) return;
 
-    // Inject global styles, including font family
+    // Inject the Inter font from Google Fonts
+    const injectFont = () => {
+      const fontLink = doc.createElement("link");
+      fontLink.rel = "stylesheet";
+      fontLink.href =
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap";
+      doc.head.appendChild(fontLink);
+    };
+
+    // Inject global styles (including Inter font)
     const injectGlobalStyles = () => {
       const globalStyle = doc.createElement("style");
       globalStyle.textContent = `
         * {
-          font-family: 'Arial', 'Helvetica', sans-serif !important;
+          font-family: 'Inter', sans-serif !important;
         }
       `;
       doc.head.appendChild(globalStyle);
     };
 
-    // Center content using flexbox
+    // Center content with flexbox
     const injectCenterStyles = () => {
       const centerStyle = doc.createElement("style");
       centerStyle.textContent = `
@@ -58,16 +69,15 @@ const Iframe: React.FC<IframeProps> = ({
 
     // Sync the theme with the iframe's body
     const applyTheme = () => {
-      doc.body.className = cn("bg-background", theme); // Update body class with theme
+      doc.body.className = cn("bg-background", theme);
     };
 
-    // Inject external and inline styles from the parent document
+    // Inject styles from the parent document
     const injectParentStyles = () => {
       const styleSheets = Array.from(document.styleSheets) as CSSStyleSheet[];
       styleSheets.forEach((sheet) => {
         const styleElement = doc.createElement("style");
         if (sheet.href) {
-          // Handle external stylesheets
           fetch(sheet.href)
             .then((res) => res.text())
             .then((cssText) => {
@@ -76,7 +86,6 @@ const Iframe: React.FC<IframeProps> = ({
             })
             .catch((err) => console.error("Failed to fetch stylesheet", err));
         } else {
-          // Handle inline stylesheets
           try {
             Array.from(sheet.cssRules).forEach((rule: CSSRule) => {
               styleElement.textContent += rule.cssText;
@@ -89,40 +98,39 @@ const Iframe: React.FC<IframeProps> = ({
       });
     };
 
-    // Render React children inside the iframe
+    // Render content inside iframe
     const renderContent = () => {
-      // Create or reuse the container
       if (!containerRef.current) {
         containerRef.current = doc.createElement("div");
         doc.body.appendChild(containerRef.current);
       }
-
-      // Render children into the container
-      if (children) {
-        //@ts-ignore
-        ReactDOM.render(children, containerRef.current);
+      if (!rootRef.current) {
+        rootRef.current = createRoot(containerRef.current);
       }
+      //@ts-ignore
+      rootRef.current.render(children);
     };
 
-    // Cleanup function to unmount children
-    const cleanupContent = () => {
-      if (containerRef.current) {
-        ReactDOM.unmountComponentAtNode(containerRef.current);
-      }
-    };
-
-    // Execute all injections
+    // Inject and render
+    injectFont();
     injectGlobalStyles();
     injectCenterStyles();
     applyTheme();
     injectParentStyles();
     renderContent();
 
-    // Cleanup on unmount or dependency change
+    // Cleanup on unmount
     return () => {
-      cleanupContent();
+      if (rootRef.current) {
+        rootRef.current.unmount();
+        rootRef.current = null;
+      }
+      if (containerRef.current) {
+        containerRef.current.remove();
+        containerRef.current = null;
+      }
     };
-  }, [children, theme]); // Rerun effect on theme or children changes
+  }, [children, theme]);
 
   return (
     <iframe
