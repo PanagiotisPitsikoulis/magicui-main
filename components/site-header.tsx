@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { CommandMenu } from "@/components/command-menu";
 import { Icons } from "@/components/icons";
@@ -7,7 +8,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { siteConfig } from "@/config/site";
 import { Button, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 
-export async function SiteHeader() {
+export function SiteHeader() {
   return (
     <Navbar isBlurred shouldBlockScroll isBordered>
       <MainNav />

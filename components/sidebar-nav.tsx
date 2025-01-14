@@ -71,7 +71,7 @@ export function DocsSidebarNavItems({
             {pathname === item.href && (
               <motion.div
                 layoutId={groupId}
-                className='absolute inset-0 rounded-r-md border-l-2 border-l-primary-200/70 bg-gradient-to-r from-primary-100/40 via-transparent to-transparent text-primary-foreground'
+                className='absolute inset-0 bg-content2 rounded-md mr-10'
                 initial={false}
                 transition={{
                   type: "spring",

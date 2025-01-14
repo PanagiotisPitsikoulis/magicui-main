@@ -26,7 +26,7 @@ export default function App() {
   ];
 
   return (
-    <div className='gap-2 grid grid-cols-2'>
+    <div className="gap-2 grid grid-cols-2">
       {list.map((item, index) => (
         <AnimatedWrapper
           key={index}
@@ -37,22 +37,22 @@ export default function App() {
         >
           <Card
             isPressable
-            shadow='sm'
+            shadow="sm"
             onPress={() => console.log(`${item.title} pressed`)}
           >
-            <CardBody className='overflow-visible p-0'>
+            <CardBody className="overflow-visible p-0">
               <Image
                 alt={item.title}
-                className='w-[350px] object-cover h-[170px]'
-                radius='lg'
-                shadow='sm'
+                className="w-[350px] object-cover h-[170px]"
+                radius="lg"
+                shadow="sm"
                 src={item.img}
-                width='100%'
+                width="100%"
               />
             </CardBody>
-            <CardFooter className='text-small justify-between'>
+            <CardFooter className="text-small justify-between">
               <b>{item.title}</b>
-              <p className='text-default-500'>{item.price}</p>
+              <p className="text-default-500">{item.price}</p>
             </CardFooter>
           </Card>
         </AnimatedWrapper>

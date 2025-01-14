@@ -110,18 +110,6 @@ export const ui: Registry = [
     files: ["magicui/hero-video-dialog.tsx"],
   },
   {
-    name: "code-comparison",
-    type: "registry:ui",
-    dependencies: ["shiki", "next-themes"],
-    files: ["magicui/code-comparison.tsx"],
-  },
-  {
-    name: "script-copy-btn",
-    type: "registry:ui",
-    dependencies: ["motion", "shiki", "next-themes"],
-    files: ["magicui/script-copy-btn.tsx"],
-  },
-  {
     name: "marquee",
     type: "registry:ui",
     files: ["magicui/marquee.tsx"],

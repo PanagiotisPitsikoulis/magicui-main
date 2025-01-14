@@ -185,35 +185,6 @@
     ]
   },
   {
-    "name": "code-comparison",
-    "type": "registry:ui",
-    "dependencies": [
-      "shiki",
-      "next-themes"
-    ],
-    "files": [
-      {
-        "path": "magicui/code-comparison.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
-    "name": "script-copy-btn",
-    "type": "registry:ui",
-    "dependencies": [
-      "motion",
-      "shiki",
-      "next-themes"
-    ],
-    "files": [
-      {
-        "path": "magicui/script-copy-btn.tsx",
-        "type": "registry:ui"
-      }
-    ]
-  },
-  {
     "name": "marquee",
     "type": "registry:ui",
     "files": [

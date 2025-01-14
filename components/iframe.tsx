@@ -127,7 +127,7 @@ const Iframe: React.FC<IframeProps> = ({
   return (
     <iframe
       ref={iframeRef}
-      className={cn("rounded-lg border border-content3", className)}
+      className={cn("rounded-lg border p-8", className)}
       style={style}
       width={width}
       height={height}

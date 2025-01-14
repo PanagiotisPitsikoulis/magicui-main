@@ -23,7 +23,7 @@ export function DocPager({ doc }: DocsPagerProps) {
     <div className='flex flex-row items-center justify-between gap-4'>
       {pager?.prev?.href && (
         <Button
-          variant='flat'
+          variant='bordered'
           startContent={<ChevronLeftIcon aria-hidden='true' />}
           size='sm'
           as={Link}
@@ -35,7 +35,7 @@ export function DocPager({ doc }: DocsPagerProps) {
       )}
       {pager?.next?.href && (
         <Button
-          variant='flat'
+          variant='bordered'
           startContent={<ChevronRightIcon aria-hidden='true' />}
           size='sm'
           as={Link}

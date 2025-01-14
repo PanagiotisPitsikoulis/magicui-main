@@ -6,6 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
+    mdxRs: true,
     optimizeCss: true,
   },
   images: {
