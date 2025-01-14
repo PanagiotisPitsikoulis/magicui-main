@@ -4,7 +4,6 @@ import { NextUIProvider } from "@nextui-org/react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@/components/analytics";
-import { PHProvider } from "@/components/posthog-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 
 /**
@@ -23,15 +22,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
             "dark:border-content2 border-content4 text-foreground bg-background"
           }
         >
-          <PHProvider>
-            <ThemeProvider attribute='class' defaultTheme='light'>
-              <TooltipProvider>
-                {children}
-                <Toaster />
-                <Analytics />
-              </TooltipProvider>
-            </ThemeProvider>
-          </PHProvider>
+          <ThemeProvider attribute='class' defaultTheme='light'>
+            <TooltipProvider>
+              {children}
+              <Toaster />
+              <Analytics />
+            </TooltipProvider>
+          </ThemeProvider>
         </div>
       </NextUIProvider>
     </>

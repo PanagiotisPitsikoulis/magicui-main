@@ -18,7 +18,7 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
   const pathname = usePathname();
 
   return items.length ? (
-    <div className='w-full pb-20'>
+    <div className='w-full pb-20 pt-8'>
       {items.map((item, index) => (
         <div key={index} className={"pb-4"}>
           <h4 className='mb-1 rounded-md px-2 py-1 text-sm font-semibold'>
@@ -71,7 +71,7 @@ export function DocsSidebarNavItems({
             {pathname === item.href && (
               <motion.div
                 layoutId={groupId}
-                className='absolute inset-0 rounded-r-md border-l-2 border-primary/70 bg-secondary'
+                className='absolute inset-0 rounded-r-md border-l-2 border-l-primary-200/70 bg-gradient-to-r from-primary-100/40 via-transparent to-transparent text-primary-foreground'
                 initial={false}
                 transition={{
                   type: "spring",

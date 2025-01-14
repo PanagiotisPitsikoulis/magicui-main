@@ -9,7 +9,7 @@ import { Button, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 
 export async function SiteHeader() {
   return (
-    <Navbar isBlurred shouldHideOnScroll shouldBlockScroll>
+    <Navbar isBlurred shouldBlockScroll isBordered>
       <MainNav />
       <MobileNav />
       <NavbarContent justify='end'>
